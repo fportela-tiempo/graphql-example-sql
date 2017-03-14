@@ -13,11 +13,12 @@ const connection = new Sequelize(
     }
 );
 
-export const Person =  new PersonModel(connection);
-export const Post = new PostModel(connection);
+const Person =  new PersonModel(connection);
+const Post = new PostModel(connection);
 
 // Relationships
 Person.hasMany(Post);
 Post.belongsTo(Person);
 
 export default connection;
+export {Person, Post}
