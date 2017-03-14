@@ -8,9 +8,7 @@ const APP_PORT = 3000;
 const app = express();
 
 app.use('/graphql', bodyParser.json(), graphqlExpress({
-    schema: schema,
-    graphiql: true,
-    pretty: true
+    schema: schema
 }));
 
 app.use('/graphiql', graphiqlExpress({
