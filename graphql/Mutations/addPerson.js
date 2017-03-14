@@ -4,7 +4,7 @@ import Db from '../../database/db';
 
 const addPerson = {
     type: Person,
-        args: {
+    args: {
         firstName: {
             type: new GraphQLNonNull(GraphQLString)
         },
