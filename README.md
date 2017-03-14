@@ -3,7 +3,7 @@
 ## Technology Stack
   - Sequelize: SQL ORM
   - Express: Node framework
-  - express-graphql: is a HTTP GraphQL server
+  - graphql-server-express: is a HTTP GraphQL server
   
 ## Getting started
   - Run ```npm install```
