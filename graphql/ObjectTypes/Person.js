@@ -21,7 +21,7 @@ const Person = new GraphQLObjectType({
             lastName: {
                 type: GraphQLString,
                 resolve(person){
-                    return person.firstName;
+                    return person.lastName;
                 }
             },
             email: {
