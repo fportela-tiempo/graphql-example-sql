@@ -1,14 +1,20 @@
-import Express from 'express';
-import GraphHTTP from 'express-graphql';
-import Schema from './graphql/Schema';
+import express from 'express';
+import schema from './graphql/Schema';
+import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
+import bodyParser from 'body-parser';
 
 const APP_PORT = 3000;
-const app = Express();
 
-app.use('/graphql', GraphHTTP({
-    schema: Schema,
-    pretty: true,
-    graphiql: true
+const app = express();
+
+app.use('/graphql', bodyParser.json(), graphqlExpress({
+    schema: schema,
+    graphiql: true,
+    pretty: true
+}));
+
+app.use('/graphiql', graphiqlExpress({
+    endpointURL: '/graphql'
 }));
 
 app.listen(APP_PORT, () => {
