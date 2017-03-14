@@ -1,6 +1,6 @@
 import { GraphQLSchema } from 'graphql';
-import Query from './graphql/RootQuery';
-import Mutation from './graphql/RootMutation';
+import Query from './RootQuery';
+import Mutation from './RootMutation';
 
 const Schema = new GraphQLSchema({
     query: Query,
